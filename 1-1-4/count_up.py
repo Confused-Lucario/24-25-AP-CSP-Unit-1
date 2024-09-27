@@ -5,6 +5,5 @@
 increment = int(input("Enter a number to count by"))
 goal = int(input("Enter a number to count up to as close as possible"))
 total = 0
-while total + increment < goal:
-    total += increment
+while total + increment < goal: total += increment
 print(total)
