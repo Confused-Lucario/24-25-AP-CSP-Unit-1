@@ -4,7 +4,7 @@ import turtle as trtl
 
 startx = 0
 starty = 0
-
+starth = 0
 # create an empty list of turtles
 my_turtles = []
 
@@ -23,13 +23,16 @@ for s in turtle_shapes:
 # defining where the turtle is to return after each shape is drawn
 for t in my_turtles:
   t.goto(startx, starty)
+  t.setheading(starth)
+  t.color(turtle_colors.pop())
   t.pendown()
   t.right(45)
   t.forward(50)
 
 # moves the turtle to create a line
-  startx = my_turtles.xcor()
-  starty = my_turtles.ycor()
+  startx = t.xcor()
+  starty = t.ycor()
+  starth = + t.heading()
 
 wn = trtl.Screen()
 wn.mainloop()
