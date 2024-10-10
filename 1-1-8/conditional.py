@@ -1,9 +1,11 @@
 status = True
 grades = [67, 95, 88, 42, 99, 77]
 lgrades = []
+x = 0
 global choice
 
 def show_menu():
+    global choice
     print("Welcome to my grading system.")
     print("Press 1 to view grades")
     print("Press 2 to add grades")
@@ -29,8 +31,20 @@ def remove_grades():
         print("You deleted the grade: " + str(grades.pop(delete_grade)))
 
 def convert_letter_grades():
-    for grades in grades:
-
+    lgrades = []
+    for x in range(len(grades)):
+        if grades[x] >= 90:
+            lgrades.insert(x, "A")
+        elif grades[x] >= 80:
+            lgrades.insert(x, "B")
+        elif grades[x] >= 70:
+            lgrades.insert(x, "C")
+        elif grades[x] >= 60:
+            lgrades.insert(x, "D")
+        else:
+            lgrades.insert(x, "F")
+    print(grades)
+    print(lgrades)
 while(status):
     show_menu()
     if choice ==1:
@@ -41,7 +55,7 @@ while(status):
         print("The following are your grades.  If you wish to simply delete the last one, enter -1")
         show_grades()
     elif choice ==4:
-        print("You will be completing this part separately")
+        convert_letter_grades()
     elif choice ==5:
         print("Thank you for using our program.  Have a great day!")
         status = False
