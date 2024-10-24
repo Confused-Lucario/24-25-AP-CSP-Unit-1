@@ -94,7 +94,7 @@ t.pendown()
 t.left(45)
 t.circle(565,360,4)
 
-t.left(t.heading())
+t.left(t.heading()+-90)
 
 while True:
     t.penup()
