@@ -1,3 +1,5 @@
+#Philip Birkland
+#jonathon frisco
 
 import turtle as Turtle
 global t
